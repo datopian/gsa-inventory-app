@@ -2,7 +2,7 @@ import React from "react"
 import { ErrorMessage, Field } from "formik"
 
 const WrappedField = props => {
-  const { label, children, helptext, required, ...rest } = props
+  const { label, children, helptext, required, id, ...rest } = props
   const choices = rest.choices || []
   const type = rest.type || "string"
   return (
@@ -29,6 +29,14 @@ const WrappedField = props => {
                 </option>
               ))}
             </Field>
+          ),
+          radio: (
+            <div>
+              <Field {...rest} className="usa-usa-radio__input" component="radio" id={id}/>
+              <label className="usa-radio__label" htmlFor={id}>
+                  {label}
+              </label>
+            </div>
           )
         }[type]
       }

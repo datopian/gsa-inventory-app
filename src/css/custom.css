@@ -1,4 +1,7 @@
 /* Custom stylesheet */
+body {
+    padding-bottom:50px;
+}
 .usa-label {
     font-weight:600;
 }

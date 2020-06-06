@@ -9,7 +9,6 @@ const App = props => {
   return (
     <div className="App">
       <DatasetFrom />
-      <hr />
     </div>
   )
 }

@@ -141,20 +141,60 @@ export class RequiredMetadata extends Component {
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-
+                    <label className="usa-label">Rights*</label> <br/>
                         <Radio
-                            label='Option 1'
+                            label='My dataset is public'
                             name="op1"
                             value="Option 1"
                             onChange={this.handleRadio}
                             id="option1"
                         />
                         <Radio
-                            label='Option 1'
+                            label='My dataset is not public'
                             name="op1"
                             value="Option 2"
                             onChange={this.handleRadio}
                             id="option2"
+                        />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                    <label className="usa-label">Relevant Location*</label> <br/>
+                        <Radio
+                            label='My dataset does not have a spatial component'
+                            name="op2"
+                            value="Option 3"
+                            onChange={this.handleRadio}
+                            id="option3"
+                        />
+                        <Radio
+                            label='My dataset does have a spatial component'
+                            name="op2"
+                            value="Option 4"
+                            onChange={this.handleRadio}
+                            id="option4"
+                        />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                    <label className="usa-label">Temporal*</label> <br/>
+                        <Radio
+                            label='My dataset does not have a start and end date for the applicability of data'
+                            name="op3"
+                            value="Option 5"
+                            onChange={this.handleRadio}
+                            id="option5"
+                        />
+                        <Radio
+                            label='My dataset does have a start and end date for the applicability of data'
+                            name="op3"
+                            value="Option 6"
+                            onChange={this.handleRadio}
+                            id="option6"
                         />
                     </div>
                 </div>
