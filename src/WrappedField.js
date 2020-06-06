@@ -2,20 +2,21 @@ import React from "react"
 import { ErrorMessage, Field } from "formik"
 
 const WrappedField = props => {
-  const { label, children, required, ...rest } = props
+  const { label, children, helptext, required, ...rest } = props
   const choices = rest.choices || []
   const type = rest.type || "string"
   return (
     <div className="m-4 mt-gutter">
-      <span className="block text-gray-600  mb-2">
+      <label className="usa-label">
         {label}
-        {required && <span className="text-red-600 text-900 text-xl">*</span>}
-      </span>
+        {required && <span>*</span>}
+      </label>
+      <p className='usa-helptext'>{ helptext }</p>
       {
         {
           string: (
             <Field
-              className="w-3/4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="usa-input"
               {...rest}
             />
           ),

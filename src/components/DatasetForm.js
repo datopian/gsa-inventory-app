@@ -8,6 +8,7 @@ import Api from '../Api.js'
 import { Formik, Form, Field, FieldArray } from "formik"
 import AutocompleteFetch from "../AutocompleteFetch"
 import "react-autocomplete-input/dist/bundle.css"
+import RequiredMetadata from "./RequiredMetadata"
 
 const DatasetFrom = ({
   collection,
@@ -168,18 +169,16 @@ const DatasetFrom = ({
         isSubmitting,
         dirty
       }) => (
-        <div className="contianer">
-            <h1>Heading</h1>
+        <div className="container">
+            <section id="section-basic-mega-menu" className="site-component-section">
+                <h1 className="usite-page-title" id="basic-mega-menu">Required Metadata</h1>
+                <p className="site-text-intro">This form follows the <a href="#">DCAT-US Schema.</a></p>
+            </section>
             <Form onSubmit={handleSubmit}>
             {status && <Notification {...status} />}
-            <WrappedField
-                label="Title"
-                name="title"
-                type="string"
-                placeholder="A title for your collection"
-                value={values.title}
-                required="true"
-            />
+
+            <RequiredMetadata values={values}/>
+            
             <div
                 className="mt-gutter bg-yellow-300 p-4 m-4 border-dotted border-4"
                 hidden={!debug}
