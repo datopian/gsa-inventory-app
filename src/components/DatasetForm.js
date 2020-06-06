@@ -10,6 +10,7 @@ import AutocompleteFetch from "../AutocompleteFetch"
 import "react-autocomplete-input/dist/bundle.css"
 import RequiredMetadata from "./RequiredMetadata"
 import Checkbox from './Checkbox'
+import Navigation from './Navigation'
 
 const DatasetFrom = ({
   collection,
@@ -183,6 +184,8 @@ const DatasetFrom = ({
         dirty
       }) => (
         <div className="container">
+            <Navigation />
+            
             <section id="section-basic-mega-menu" className="site-component-section">
                 <h1 className="usite-page-title" id="basic-mega-menu">Required Metadata</h1>
                 <p className="site-text-intro">This form follows the <a href="#">DCAT-US Schema.</a></p>

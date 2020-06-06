@@ -20,3 +20,28 @@ body {
 textarea.usa-input {
     min-height:100px;
 }
+
+
+/* navigation */
+.app_navigation {
+    margin-top:50px;
+    margin-bottom:60px;
+    width:100%;
+    cursor: pointer;
+}
+
+.app_navigation .navsec {
+    width:33.3%;
+    background-color:#F0F0F0;
+    display: inline-block;
+    padding: 15px;
+    text-align: center;
+}
+
+.app_navigation .navsec.active {
+    background-color:#DCDEE0;
+}
+
+.app_navigation .navsec label {
+    cursor: pointer;
+}
