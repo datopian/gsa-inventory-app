@@ -9,7 +9,7 @@ export class RequiredMetadata extends Component {
     
     render() {
         return (
-            <div>
+            <div class="usa-form-custom">
                 <div class="row">
                     <div class="col-md-12">
                         <WrappedField
@@ -156,7 +156,17 @@ export class RequiredMetadata extends Component {
                             onChange={this.handleRadio}
                             id="option2"
                         />
+
+                        <WrappedField
+                            name="dataset_rights"
+                            type="string"
+                            helptext="If your dataset is not public, please add an explanation of rights and feel free to include any instructions on restrictions, or how to access a restricted file*"
+                            disabled={true}
+                            required={false}
+                        />
                     </div>
+
+
                 </div>
 
                 <div class="row">
@@ -175,6 +185,14 @@ export class RequiredMetadata extends Component {
                             value="Option 4"
                             onChange={this.handleRadio}
                             id="option4"
+                        />
+
+                        <WrappedField
+                            name="dataset_spatial"
+                            type="string"
+                            helptext="If your dataset has a spatial component, please provide location such as place name or latitude/longitude pairs*"
+                            disabled={true}
+                            required={false}
                         />
                     </div>
                 </div>

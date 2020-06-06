@@ -4,6 +4,11 @@ body {
 }
 .usa-label {
     font-weight:600;
+    margin-top:20px;
+}
+
+.usa-form-custom .row{
+    margin-top:25px;
 }
 
 .usa-input, .usa-select {
