@@ -3,6 +3,7 @@ import WrappedField from "../WrappedField"
 import FieldInfo from "../FieldInfo"
 import Notification from "../Notification"
 import Checkbox from './Checkbox'
+import Radio from './Radio'
 
 export class RequiredMetadata extends Component {
     
@@ -140,11 +141,20 @@ export class RequiredMetadata extends Component {
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <Checkbox
-                            label='I Accept'
-                            selected={this.props.values.extras.rights}
-                            onChange={this.handleCheckbox}
-                            id="iaccept"
+
+                        <Radio
+                            label='Option 1'
+                            name="op1"
+                            value="Option 1"
+                            onChange={this.handleRadio}
+                            id="option1"
+                        />
+                        <Radio
+                            label='Option 1'
+                            name="op1"
+                            value="Option 2"
+                            onChange={this.handleRadio}
+                            id="option2"
                         />
                     </div>
                 </div>

@@ -22,7 +22,7 @@ const WrappedField = props => {
           ),
           select: (
             <Field {...rest} className="usa-select" component="select">
-              <option key={0}>Choose one</option>
+              <option key={0}>-Select-</option>
               {choices.map((choice, i) => (
                 <option value={choice} key={i + 1}>
                   {choice}
