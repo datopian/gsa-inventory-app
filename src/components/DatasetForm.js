@@ -196,13 +196,13 @@ const DatasetFrom = ({
             <RequiredMetadata values={values}/>
             
             <div className="row">
-              <div class="col-sm-12">
+              <div className="col-sm-12">
                 <br/><br/>
               </div>
               <div className="col-sm-4">
                 <button className="usa-button">Back</button>
               </div>
-              <div class="col-sm-8 text-right">
+              <div className="col-sm-8 text-right">
                 <button className="usa-button usa-button--outline">Save as draft</button>
                 <button className="usa-button" type="submit">Save and continue</button>
               </div>

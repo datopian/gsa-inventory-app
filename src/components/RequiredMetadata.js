@@ -7,11 +7,14 @@ import Radio from './Radio'
 
 export class RequiredMetadata extends Component {
     
+    handleRadio() {
+
+    }
     render() {
         return (
-            <div class="usa-form-custom">
-                <div class="row">
-                    <div class="col-md-12">
+            <div className="usa-form-custom">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Title"
                             name="title"
@@ -23,8 +26,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Description"
                             name="description"
@@ -37,8 +40,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Tags"
                             name="tags"
@@ -50,8 +53,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Publisher"
                             name="publisher"
@@ -62,8 +65,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Sub Agency"
                             name="subagency"
@@ -73,8 +76,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Contact Name"
                             name="extras.contactName"
@@ -83,8 +86,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Contact Email"
                             name="extras.contactEmail"
@@ -93,8 +96,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Unique ID"
                             name="extras.uniqueID"
@@ -103,8 +106,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Public Access level"
                             name="publicaccesslevel"
@@ -115,8 +118,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="Meets Agency Data Quality"
                             name="meets_agency_data_quality"
@@ -127,8 +130,8 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                         <WrappedField
                             label="License"
                             name="license"
@@ -139,13 +142,14 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                     <label className="usa-label">Rights*</label> <br/>
                         <Radio
                             label='My dataset is public'
                             name="op1"
                             value="Option 1"
+                            selected={true}
                             onChange={this.handleRadio}
                             id="option1"
                         />
@@ -153,6 +157,7 @@ export class RequiredMetadata extends Component {
                             label='My dataset is not public'
                             name="op1"
                             value="Option 2"
+                            selected={false}
                             onChange={this.handleRadio}
                             id="option2"
                         />
@@ -169,13 +174,14 @@ export class RequiredMetadata extends Component {
 
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                     <label className="usa-label">Relevant Location*</label> <br/>
                         <Radio
                             label='My dataset does not have a spatial component'
                             name="op2"
                             value="Option 3"
+                            selected={true}
                             onChange={this.handleRadio}
                             id="option3"
                         />
@@ -183,6 +189,7 @@ export class RequiredMetadata extends Component {
                             label='My dataset does have a spatial component'
                             name="op2"
                             value="Option 4"
+                            selected={false}
                             onChange={this.handleRadio}
                             id="option4"
                         />
@@ -197,13 +204,14 @@ export class RequiredMetadata extends Component {
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12">
+                <div className="row">
+                    <div className="col-md-12">
                     <label className="usa-label">Temporal*</label> <br/>
                         <Radio
                             label='My dataset does not have a start and end date for the applicability of data'
                             name="op3"
                             value="Option 5"
+                            selected={true}
                             onChange={this.handleRadio}
                             id="option5"
                         />
@@ -211,6 +219,7 @@ export class RequiredMetadata extends Component {
                             label='My dataset does have a start and end date for the applicability of data'
                             name="op3"
                             value="Option 6"
+                            selected={false}
                             onChange={this.handleRadio}
                             id="option6"
                         />

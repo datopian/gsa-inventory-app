@@ -19,7 +19,7 @@ const Radio = ({label, selected, styleClass,id,name, onChange}) => {
                     name={name}
                     id={id}/>
 
-                <label className="usa-radio__label" for={id}>
+                <label className="usa-radio__label" htmlFor={id}>
                     {label}
                 </label>
         </div>
