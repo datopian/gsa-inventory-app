@@ -51,3 +51,11 @@ textarea.usa-input {
     cursor: pointer;
     font-weight:600;
 }
+
+
+.usa-helptext.disabled {
+    color:#a0a0a0;
+}
+.usa-input.disabled {
+    border-color:#cacaca;
+}

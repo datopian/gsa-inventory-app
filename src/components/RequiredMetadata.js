@@ -214,6 +214,22 @@ export class RequiredMetadata extends Component {
                             onChange={this.handleRadio}
                             id="option6"
                         />
+
+                        <WrappedField
+                            name="dataset_spatial"
+                            type="string"
+                            helptext="If your dataset has a temporal component, please provide start date for applicability of data above"
+                            disabled={true}
+                            required={false}
+                        />
+
+                        <WrappedField
+                            name="dataset_spatial"
+                            type="string"
+                            helptext="If your dataset has a temporal component, please provide end date for applicability of data above"
+                            disabled={true}
+                            required={false}
+                        />
                     </div>
                 </div>
             </div>
