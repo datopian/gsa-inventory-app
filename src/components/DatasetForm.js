@@ -204,7 +204,7 @@ const DatasetFrom = ({
               </div>
               <div class="col-sm-8 text-right">
                 <button className="usa-button usa-button--outline">Save as draft</button>
-                <button className="usa-button">Save and continue</button>
+                <button className="usa-button" type="submit">Save and continue</button>
               </div>
             </div>
 
