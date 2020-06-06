@@ -7,9 +7,10 @@ const App = props => {
   console.log("col", props.collection)
   return (
     <div className="App">
+      <h1 className="jumbotron">Hello Testing BS</h1>
       <h2 className="text-3xl my-gutter ml-4">
         {props.collection.extras && props.collection.extras.master
-          ? "Master Collection information"
+          ? "Required Metadata"
           : "Collection information"}
       </h2>
       <CollectionsForm {...props} />
