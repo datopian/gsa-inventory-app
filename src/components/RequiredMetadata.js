@@ -55,10 +55,98 @@ export class RequiredMetadata extends Component {
                             type="select"
                             choices={["Publisher 1 ", "Publisher 2", "Publisher 3", "Publisher 4"]}
                             required={true}
-                            className="block appearance-none w-36 my-4 bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            className=""
                         />
                     </div>
-                    
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <WrappedField
+                            label="Sub Agency"
+                            name="subagency"
+                            type="select"
+                            choices={["Sub Agency 1 ", "Sub Agency 2", "Sub Agency 3", "Sub-Agency 4"]}
+                            className=""
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <WrappedField
+                            label="Contact Name"
+                            name="extras.contactName"
+                            type="string"
+                            required={true}
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <WrappedField
+                            label="Contact Email"
+                            name="extras.contactEmail"
+                            type="string"
+                            required={true}
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <WrappedField
+                            label="Unique ID"
+                            name="extras.uniqueID"
+                            type="string"
+                            required={true}
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <WrappedField
+                            label="Public Access level"
+                            name="publicaccesslevel"
+                            type="select"
+                            choices={["Private", "Public"]}
+                            className=""
+                            required={true}
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <WrappedField
+                            label="Meets Agency Data Quality"
+                            name="meets_agency_data_quality"
+                            type="select"
+                            choices={["Yes", "No"]}
+                            className=""
+                            required={true}
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <WrappedField
+                            label="License"
+                            name="license"
+                            type="select"
+                            choices={["MIT", "Open Source License","Others"]}
+                            className=""
+                            required={true}
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <WrappedField
+                            label="License"
+                            name="license"
+                            type="select"
+                            choices={["MIT", "Open Source License","Others"]}
+                            className=""
+                            required={true}
+                        />
+                    </div>
                 </div>
             </div>
         )

@@ -91,10 +91,12 @@ const DatasetFrom = ({
     title: "",
     description: "",
     publisher: "",
+    subagency: "",
     extras: {
       dataLevel: "",
       contactName: "",
-      contactEmail: ""
+      contactEmail: "",
+      uniqueID: ""
     }
   }
 
@@ -107,6 +109,10 @@ const DatasetFrom = ({
 
     if (!values.extras.contactName) {
       errors.extras.contactName = "Contact Name is required"
+    }
+
+    if (!values.extras.uniqueID) {
+      errors.extras.uniqueID = "Unique ID is required"
     }
 
     if (!values.extras.contactEmail) {
@@ -140,7 +146,7 @@ const DatasetFrom = ({
     }
 
     if (!values.publisher) {
-      errors.extras.dataLevel = "Publisher is required"
+      errors.extras.publisher = "Publisher is required"
     }
 
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}
@@ -240,18 +246,7 @@ const DatasetFrom = ({
                 name="extras.frequency"
                 type="string"
             />
-            <WrappedField
-                label="Contact Name"
-                name="extras.contactName"
-                type="string"
-                required={true}
-            />
-            <WrappedField
-                label="Contact Email"
-                name="extras.contactEmail"
-                type="string"
-                required={true}
-            />
+            
             <WrappedField
                 label="Home Page"
                 name="extras.homePageUrl"
