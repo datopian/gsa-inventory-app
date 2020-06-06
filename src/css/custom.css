@@ -34,7 +34,7 @@ textarea.usa-input {
     width:33.3%;
     background-color:#F0F0F0;
     display: inline-block;
-    padding: 15px;
+    padding: 10px 15px;
     text-align: center;
 }
 
@@ -44,4 +44,5 @@ textarea.usa-input {
 
 .app_navigation .navsec label {
     cursor: pointer;
+    font-weight:600;
 }
