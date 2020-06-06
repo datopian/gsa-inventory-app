@@ -9,6 +9,7 @@ import { Formik, Form, Field, FieldArray } from "formik"
 import AutocompleteFetch from "../AutocompleteFetch"
 import "react-autocomplete-input/dist/bundle.css"
 import RequiredMetadata from "./RequiredMetadata"
+import Checkbox from './Checkbox'
 
 const DatasetFrom = ({
   collection,
@@ -96,7 +97,8 @@ const DatasetFrom = ({
       dataLevel: "",
       contactName: "",
       contactEmail: "",
-      uniqueID: ""
+      uniqueID: "",
+      rights: ""
     }
   }
 
@@ -212,85 +214,7 @@ const DatasetFrom = ({
                 </a>
             )}
             
-            <WrappedField label="Category" name="extras.category" type="string" />
-            <WrappedField
-                label="Program Code"
-                name="extras.programCode"
-                type="string"
-            />
-            <WrappedField
-                label="Data level"
-                name="extras.dataLevel"
-                type="select"
-                choices={["federal", "state", "district", "school"]}
-                required={true}
-                className="block appearance-none w-36 my-4 bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            >
-                <FieldInfo text="Choices: public (data is or could be made available to all without restrictions), restricted public (data is available under certain use restrictions), or non-public (data asset is not available to members of the public)" />
-            </WrappedField>
-            <WrappedField
-                label="Organization"
-                name="extras.organization"
-                type="string"
-            />
-            <WrappedField
-                label="Spatial/Temporal"
-                name="extras.spatial"
-                type="string"
-                placeholder="eg. Lincoln, Nebraska"
-            >
-                <FieldInfo text="The states represented in this data" />
-            </WrappedField>
-            <WrappedField
-                label="Frequency"
-                name="extras.frequency"
-                type="string"
-            />
             
-            <WrappedField
-                label="Home Page"
-                name="extras.homePageUrl"
-                type="string"
-            />
-            <WrappedField
-                label="References"
-                name="extras.references"
-                type="string"
-            />
-            {values.extras && values.extras.master && (
-                <div>
-                <h3 className="block text-gray-600 mt-gutter mb-2 ml-4">
-                    Add to Master Collection
-                </h3>
-                <AutocompleteFetch
-                    values={values}
-                    apiUrl={apiUrl}
-                    name="groups"
-                    titleField="name"
-                    getOptions={fetchCollectionsOpts}
-                />
-                </div>
-            )}
-            {(!values.extras || !values.extras.master) && (
-                <div>
-                <h3 className="block text-gray-600 mt-gutter mb-2 ml-4">
-                    Add Data Profiles
-                </h3>
-                <AutocompleteFetch
-                    values={values}
-                    apiUrl={apiUrl}
-                    name="packages"
-                    titleField="name"
-                    getOptions={fetchDatasetsOpts}
-                />
-                </div>
-            )}
-            <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline m-4"
-                type="submit"
-            >
-                {values.id ? "Update" : "Create"}
-            </button>
             {values.id && (
                 <button
                 className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline m-4"

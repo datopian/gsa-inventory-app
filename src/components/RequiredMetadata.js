@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import WrappedField from "../WrappedField"
 import FieldInfo from "../FieldInfo"
 import Notification from "../Notification"
+import Checkbox from './Checkbox'
 
 export class RequiredMetadata extends Component {
+    
     render() {
         return (
             <div>
@@ -138,13 +140,11 @@ export class RequiredMetadata extends Component {
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <WrappedField
-                            label="License"
-                            name="license"
-                            type="select"
-                            choices={["MIT", "Open Source License","Others"]}
-                            className=""
-                            required={true}
+                        <Checkbox
+                            label='I Accept'
+                            selected={this.props.values.extras.rights}
+                            onChange={this.handleCheckbox}
+                            id="iaccept"
                         />
                     </div>
                 </div>
