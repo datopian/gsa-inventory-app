@@ -6,7 +6,7 @@ const WrappedField = props => {
   const choices = rest.choices || []
   const type = rest.type || "string"
   return (
-    <div className="m-4 mt-gutter">
+    <div>
       <label className="usa-label">
         {label}
         {required && <span>*</span>}
@@ -21,7 +21,7 @@ const WrappedField = props => {
             />
           ),
           select: (
-            <Field {...rest} component="select">
+            <Field {...rest} className="usa-select" component="select">
               <option key={0}>Choose one</option>
               {choices.map((choice, i) => (
                 <option value={choice} key={i + 1}>

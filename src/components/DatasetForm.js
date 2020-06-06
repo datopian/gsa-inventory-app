@@ -90,6 +90,7 @@ const DatasetFrom = ({
   const defaultValues = {
     title: "",
     description: "",
+    publisher: "",
     extras: {
       dataLevel: "",
       contactName: "",
@@ -136,6 +137,10 @@ const DatasetFrom = ({
 
     if (!values.extras.dataLevel) {
       errors.extras.dataLevel = "Data Level is required"
+    }
+
+    if (!values.publisher) {
+      errors.extras.dataLevel = "Publisher is required"
     }
 
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}
@@ -200,17 +205,7 @@ const DatasetFrom = ({
                 Add documentation to Collection
                 </a>
             )}
-            <WrappedField
-                label="Description"
-                name="description"
-                type="string"
-                component="textarea"
-                rows="6"
-                value={values.description}
-                required={true}
-            >
-                <FieldInfo text="You can use Markdown formatting here" />
-            </WrappedField>
+            
             <WrappedField label="Category" name="extras.category" type="string" />
             <WrappedField
                 label="Program Code"
