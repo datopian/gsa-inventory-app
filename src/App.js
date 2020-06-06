@@ -13,6 +13,15 @@ const App = props => {
           ? "Required Metadata"
           : "Collection information"}
       </h2>
+        
+      <h1 id="card" class="site-page-title">Card</h1>
+      <div class="usa-alert usa-alert--info">
+  <div class="usa-alert__body">
+    <h3 class="usa-alert__heading">Informative status</h3>
+    <p class="usa-alert__text">Lorem ipsum dolor sit amet, <a href="javascript:void(0);">consectetur adipiscing</a> elit, sed do eiusmod.</p>
+  </div>
+</div>
+      <button class="usa-button ">Default</button>
       <CollectionsForm {...props} />
       <hr />
     </div>
