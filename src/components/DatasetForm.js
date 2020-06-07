@@ -199,12 +199,8 @@ const DatasetFrom = ({
         dirty
       }) => (
         <div className="container">
-           <p> hiiiii { step }</p>
-           <button onClick={() => handleSteps(1)}>Next</button>
-           <button onClick={() => handleSteps(2)}>Next</button>
-           <button onClick={() => handleSteps(3)}>Next</button>
 
-            <Navigation handleSteps={handleSteps}/>
+            <Navigation handleSteps={handleSteps} currentStep={step}/>
             
             
             <Form onSubmit={handleSubmit}>
