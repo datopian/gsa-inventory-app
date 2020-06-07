@@ -98,3 +98,7 @@ textarea.usa-input {
     padding: 8px 0 0px 0;
     font-weight: 600;
 }
+
+.pad-left-0 {
+    padding-left:0
+}
