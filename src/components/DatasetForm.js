@@ -206,16 +206,14 @@ const DatasetFrom = ({
 
             <Navigation handleSteps={handleSteps}/>
             
-            <section id="section-basic-mega-menu" className="site-component-section">
-                <h1 className="usite-page-title" id="basic-mega-menu">Required Metadata</h1>
-                <p className="site-text-intro">This form follows the <a href="#">DCAT-US Schema.</a></p>
-            </section>
+            
             <Form onSubmit={handleSubmit}>
             {status && <Notification {...status} />}
 
-            <RequiredMetadata values={values}/>
-            <AdditionalMetadata values={values}/>
-            <ResourceMetadata values={values}/>
+            
+            <RequiredMetadata values={values} currentStep={step}/>
+            <AdditionalMetadata values={values} currentStep={step}/>
+            <ResourceMetadata values={values} currentStep={step}/>
             
             <div className="row">
               <div className="col-sm-12">

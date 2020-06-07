@@ -11,8 +11,15 @@ export class RequiredMetadata extends Component {
 
     }
     render() {
+        if (this.props.currentStep != 1) { // Prop: The current step
+         return null
+        }
         return (
             <div className="usa-form-custom">
+                <section id="section-basic-mega-menu" className="site-component-section">
+                    <h1 className="usite-page-title" id="basic-mega-menu">Required Metadata</h1>
+                    <p className="site-text-intro">This form follows the <a href="#">DCAT-US Schema.</a></p>
+                </section>
                 <div className="row">
                     <div className="col-md-12">
                         <WrappedField
