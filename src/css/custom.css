@@ -33,23 +33,55 @@ textarea.usa-input {
     margin-bottom:60px;
     width:100%;
     cursor: pointer;
+    -moz-box-pack: justify;
+    display: flex;
+    justify-content: space-between;
 }
-
 .app_navigation .navsec {
-    width:33.3%;
+    width: 100%;
+    /*width:33.3%;*/
     background-color:#F0F0F0;
-    display: inline-block;
+    /*display: inline-block;*/
     padding: 10px 15px;
     text-align: center;
+    margin: 0 8px;
+    position: relative;
 }
-
 .app_navigation .navsec.active {
     background-color:#DCDEE0;
 }
-
 .app_navigation .navsec label {
     cursor: pointer;
     font-weight:600;
+}
+
+.app_navigation .navsec:before,
+.app_navigation .navsec:after{
+    position: absolute;
+    content: "";
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+}
+
+.app_navigation .navsec:before{
+    border-left: 15px solid #ffffff;
+    left: 0;
+    top: 0;
+}
+
+.app_navigation .navsec:after{
+    border-left: 15px solid #F0F0F0;
+    right: -15px;
+    top: 0;
+}
+
+.app_navigation .navsec:first-child:before,
+.app_navigation .navsec:last-child:after{
+    display: none;
+}
+
+.app_navigation .navsec.active:after{
+    border-left: 15px solid #DCDEE0;
 }
 
 
