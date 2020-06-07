@@ -91,3 +91,10 @@ textarea.usa-input {
 .usa-input.disabled {
     border-color:#cacaca;
 }
+
+.error-msg {
+    color: #E41D3D;
+    font-size: .8em;
+    padding: 8px 0 0px 0;
+    font-weight: 600;
+}
