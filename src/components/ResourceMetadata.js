@@ -4,7 +4,7 @@ export class ResourceMetadata extends Component {
     render() {
         return (
             <div>
-                
+                <h1>Resource Metadata</h1>
             </div>
         )
     }

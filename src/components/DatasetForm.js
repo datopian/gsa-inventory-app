@@ -11,6 +11,8 @@ import "react-autocomplete-input/dist/bundle.css"
 import RequiredMetadata from "./RequiredMetadata"
 import Checkbox from './Checkbox'
 import Navigation from './Navigation'
+import AdditionalMetadata from "./AdditionalMetadata"
+import ResourceMetadata from "./ResourceMetadata"
 
 const DatasetFrom = ({
   collection,
@@ -20,6 +22,14 @@ const DatasetFrom = ({
   apiUrl,
   ...props
 }) => {
+
+  //State hooks for Steps
+  let [step, setStep] = useState('1');
+  
+  const handleSteps = nextstep => {
+    setStep(nextstep);
+  }
+
 
   // Fetch Collections from API and return as array of names
   const fetchCollectionsOpts = async (part, values, setOpts) => {
@@ -156,6 +166,11 @@ const DatasetFrom = ({
     return errors
   }
 
+  const printValues = () => {
+    alert('hi');
+  }
+
+
   return (
     <Formik
       initialValues={Object.assign({}, defaultValues, collection)}
@@ -184,7 +199,12 @@ const DatasetFrom = ({
         dirty
       }) => (
         <div className="container">
-            <Navigation />
+           <p> hiiiii { step }</p>
+           <button onClick={() => handleSteps(1)}>Next</button>
+           <button onClick={() => handleSteps(2)}>Next</button>
+           <button onClick={() => handleSteps(3)}>Next</button>
+
+            <Navigation handleSteps={handleSteps}/>
             
             <section id="section-basic-mega-menu" className="site-component-section">
                 <h1 className="usite-page-title" id="basic-mega-menu">Required Metadata</h1>
@@ -194,6 +214,8 @@ const DatasetFrom = ({
             {status && <Notification {...status} />}
 
             <RequiredMetadata values={values}/>
+            <AdditionalMetadata values={values}/>
+            <ResourceMetadata values={values}/>
             
             <div className="row">
               <div className="col-sm-12">
@@ -204,7 +226,7 @@ const DatasetFrom = ({
               </div>
               <div className="col-sm-8 text-right">
                 <button className="usa-button usa-button--outline">Save as draft</button>
-                <button className="usa-button" type="submit">Save and continue</button>
+                <button className="usa-button" type="submit" onClick={() => printValues()}>Save and continue</button>
               </div>
             </div>
 
