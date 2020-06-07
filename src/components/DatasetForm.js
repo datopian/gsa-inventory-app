@@ -13,6 +13,7 @@ import Checkbox from './Checkbox'
 import Navigation from './Navigation'
 import AdditionalMetadata from "./AdditionalMetadata"
 import ResourceMetadata from "./ResourceMetadata"
+import BackButton from "./BackButton"
 
 const DatasetFrom = ({
   collection,
@@ -216,7 +217,7 @@ const DatasetFrom = ({
                 <br/><br/>
               </div>
               <div className="col-sm-4">
-                <button className="usa-button">Back</button>
+                <BackButton currentStep={step} handleSteps={handleSteps}/>
               </div>
               <div className="col-sm-8 text-right">
                 <button className="usa-button usa-button--outline">Save as draft</button>
