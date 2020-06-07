@@ -14,6 +14,7 @@ import Navigation from './Navigation'
 import AdditionalMetadata from "./AdditionalMetadata"
 import ResourceMetadata from "./ResourceMetadata"
 import BackButton from "./BackButton"
+import SubmitButtons from "./SubmitButtons"
 
 const DatasetFrom = ({
   collection,
@@ -220,8 +221,7 @@ const DatasetFrom = ({
                 <BackButton currentStep={step} handleSteps={handleSteps}/>
               </div>
               <div className="col-sm-8 text-right">
-                <button className="usa-button usa-button--outline">Save as draft</button>
-                <button className="usa-button" type="submit" onClick={() => printValues()}>Save and continue</button>
+                <SubmitButtons currentStep={step}  handleSteps={handleSteps}/>
               </div>
             </div>
 
