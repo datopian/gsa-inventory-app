@@ -115,3 +115,76 @@ textarea.usa-input {
     font-size: .8rem;
     padding: 8px 15px;
 }
+
+
+/* Tool tip */
+.tooltip {
+    position: relative;
+    display: inline;
+}
+
+.tooltip .fa{
+    color: #0A50D8;
+    font-size: 80%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 360px;
+    background-color: #F0F0F0;
+    color: #202020;
+    text-align: left;
+    border-radius: 0;
+    padding: 10px 15px 30px;
+    position: absolute;
+    z-index: 1;
+    top: -155px;
+    left: 100px;
+}
+
+.tooltip.show .tooltiptext{
+    visibility: visible;
+}
+
+.tooltip .tooltiptext h3{
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.tooltip .tooltiptext p{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.tooltip .tooltiptext .close{
+    text-align: right;
+    font-size: 20px;
+    display: block;
+}
+
+.tooltip .tooltiptext .close a{
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+}
+
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: #F0F0F0 transparent transparent transparent;
+}
+
+.tooltip .fa {
+    width:14px;
+    color:#0050D8 !important;
+}

@@ -18,7 +18,19 @@ const WrappedField = props => {
       <label className="usa-label">
         {label}
         {required && <span>*</span>}
+
+        <div class="tooltip">
+            <img className="fa" src={require('./img/info.svg')} />
+            <span class="tooltiptext">
+                <span class="close">
+                    <a href="javascript:void()">&times;</a>
+                </span>
+                <h3>Publisher*</h3>
+                <p>The publishing entity (e.g. your agency) and optionally thier parent organization(s).</p>
+            </span>
+        </div>
       </label>
+      
       <p className={`usa-helptext ${ disabledClass }`}>{ helptext }</p>
       <ErrorMessage className="error-msg" {...rest} component="div" />
       {

@@ -7,10 +7,22 @@ import "./css/custom.css";
 import App from "./App"
 import API from "./Api"
 import * as serviceWorker from "./serviceWorker"
+import $ from 'jquery';
 
 console.log("v0.4.6")
 const el = document.getElementById("dep-of-ed-admin-ui")
 let config = {}
+
+$(document).ready(function(){
+  $('.tooltip .fa').click( function() {
+    $('.tooltip').removeClass("show");
+    $(this).parent('.tooltip').addClass("show");
+  });
+
+  $('.tooltip .tooltiptext .close').click( function() {
+    $(this).parent().parent().removeClass("show");
+  });
+})
 
 // Parse config from environment
 try {
