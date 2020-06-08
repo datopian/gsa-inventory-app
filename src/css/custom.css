@@ -102,3 +102,16 @@ textarea.usa-input {
 .pad-left-0 {
     padding-left:0
 }
+
+
+.dataset_url {
+    color: #71767A;
+    display: inline;
+    padding-right:20px;
+}
+
+.dataset_url_edit {
+    margin-top:10px;
+    font-size: .8rem;
+    padding: 8px 15px;
+}

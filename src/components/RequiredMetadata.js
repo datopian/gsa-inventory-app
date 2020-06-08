@@ -31,6 +31,13 @@ export class RequiredMetadata extends Component {
                             value={this.props.values.title}
                             required="true"
                         />
+
+
+                        <p class="dataset_url">
+                            URL: URL: vanilla28.ckan.io/dataset/dataset-name
+                        </p>
+
+                        <button class="usa-button dataset_url_edit">Edit</button>
                     </div>
                 </div>
                 <div className="row">
