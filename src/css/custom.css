@@ -121,6 +121,7 @@ textarea.usa-input {
 .tooltip {
     position: relative;
     display: inline;
+    top:2px;
 }
 
 .tooltip .fa{
@@ -137,11 +138,11 @@ textarea.usa-input {
     color: #202020;
     text-align: left;
     border-radius: 0;
-    padding: 10px 15px 30px;
+    padding: 10px 15px 40px;
     position: absolute;
     z-index: 1;
-    top: -155px;
-    left: 100px;
+    top: -165px;
+    left: -20px;
 }
 
 .tooltip.show .tooltiptext{
@@ -150,8 +151,8 @@ textarea.usa-input {
 
 .tooltip .tooltiptext h3{
     margin: 0 0 10px;
-    font-size: 1.35rem;
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 600;
     line-height: 1.5;
 }
 

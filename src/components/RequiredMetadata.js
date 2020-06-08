@@ -76,6 +76,7 @@ export class RequiredMetadata extends Component {
                             choices={["Publisher 1 ", "Publisher 2", "Publisher 3", "Publisher 4"]}
                             required={true}
                             className=""
+                            infoText="The publishing entity (e.g. your agency) and optionally their parent organization(s)."
                         />
                     </div>
                 </div>
@@ -97,6 +98,7 @@ export class RequiredMetadata extends Component {
                             name="extras.contactName"
                             type="string"
                             required={true}
+                            infoText="Lorem ipsum set dolor immit as this i a dummy text for tooltip"
                         />
                     </div>
                 </div>
@@ -117,6 +119,7 @@ export class RequiredMetadata extends Component {
                             name="extras.uniqueID"
                             type="string"
                             required={true}
+                            infoText="Lorem ipsum set dolor immit as this i a dummy text for tooltip"
                         />
                     </div>
                 </div>

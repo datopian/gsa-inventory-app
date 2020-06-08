@@ -2,7 +2,7 @@ import React from "react"
 import { ErrorMessage, Field } from "formik"
 
 const WrappedField = props => {
-  const { label, children, helptext, required, id, disabled, ...rest } = props
+  const { label, children, helptext, required, id, disabled, infoText, ...rest } = props
   const choices = rest.choices || []
   const type = rest.type || "string"
 
@@ -13,24 +13,27 @@ const WrappedField = props => {
   } else {
     disabledClass = ""; 
   }
+
+
   return (
     <div>
       <label className="usa-label">
         {label}
         {required && <span>*</span>}
 
-        <div class="tooltip">
-            <img className="fa" src={require('./img/info.svg')} />
-            <span class="tooltiptext">
-                <span class="close">
-                    <a href="javascript:void()">&times;</a>
-                </span>
-                <h3>Publisher*</h3>
-                <p>The publishing entity (e.g. your agency) and optionally thier parent organization(s).</p>
-            </span>
-        </div>
+        {/* Tooltip */}
+        {infoText && <div class="tooltip">
+          <img className="fa" src={require("./img/info.svg")} />
+          <span class="tooltiptext">
+              <span class="close">
+                  <a href="javascript:void()">&times;</a>
+              </span>
+              <h3>{ label }</h3>
+              <p>{ infoText }</p>
+          </span>
+        </div>} 
       </label>
-      
+
       <p className={`usa-helptext ${ disabledClass }`}>{ helptext }</p>
       <ErrorMessage className="error-msg" {...rest} component="div" />
       {
