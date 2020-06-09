@@ -41,6 +41,7 @@ const WrappedField = props => {
           string: (
             <Field
               className={`usa-input ${ disabledClass }`}
+              disabled={disabled}
               {...rest}
             />
           ),
