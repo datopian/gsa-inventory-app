@@ -4,7 +4,7 @@ export class Navigation extends Component {
     
     render() {
         return (
-            <div className="app_navigation">
+            <div className="app_navigation" id="app_navigation">
                 <div className={`navsec ${this.props.currentStep==1 ? 'active' : ''}`} onClick={() => this.props.handleSteps(1)} >
                     <label>Required Metadata</label>
                 </div>

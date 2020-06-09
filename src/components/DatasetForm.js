@@ -15,6 +15,7 @@ import AdditionalMetadata from "./AdditionalMetadata"
 import ResourceMetadata from "./ResourceMetadata"
 import BackButton from "./BackButton"
 import SubmitButtons from "./SubmitButtons"
+import $ from 'jquery';
 
 const DatasetFrom = ({
   collection,
@@ -30,6 +31,7 @@ const DatasetFrom = ({
   
   const handleSteps = nextstep => {
     setStep(nextstep);
+    $(window).scrollTop(0);
   }
 
 

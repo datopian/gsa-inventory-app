@@ -22,11 +22,11 @@ const WrappedField = props => {
         {required && <span>*</span>}
 
         {/* Tooltip */}
-        {infoText && <div class="tooltip">
+        {infoText && <div className="tooltip">
           <img className="fa" src={require("./img/info.svg")} />
-          <span class="tooltiptext">
-              <span class="close">
-                  <a href="javascript:void()">&times;</a>
+          <span className="tooltiptext">
+              <span className="close">
+                  <a >&times;</a>
               </span>
               <h3>{ label }</h3>
               <p>{ infoText }</p>

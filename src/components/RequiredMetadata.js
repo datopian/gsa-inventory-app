@@ -33,11 +33,11 @@ export class RequiredMetadata extends Component {
                         />
 
 
-                        <p class="dataset_url">
+                        <p className="dataset_url">
                             URL: URL: vanilla28.ckan.io/dataset/dataset-name
                         </p>
 
-                        <button class="usa-button dataset_url_edit">Edit</button>
+                        <button className="usa-button dataset_url_edit">Edit</button>
                     </div>
                 </div>
                 <div className="row">

@@ -189,3 +189,7 @@ textarea.usa-input {
     width:14px;
     color:#0050D8 !important;
 }
+
+.tooltip a {
+    cursor: pointer;
+}
