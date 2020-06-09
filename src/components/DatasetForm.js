@@ -210,10 +210,10 @@ const DatasetFrom = ({
             <Form onSubmit={handleSubmit}>
             {status && <Notification {...status} />}
 
-            
             <RequiredMetadata values={values} currentStep={step}/>
             <AdditionalMetadata values={values} currentStep={step}/>
             <ResourceMetadata values={values} currentStep={step}/>
+            
             
             <div className="row">
               <div className="col-sm-12">

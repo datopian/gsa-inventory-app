@@ -208,3 +208,28 @@ textarea.usa-input {
 .dataset_url_edit {
     margin-top:0;
 }
+
+.tags_container {
+    padding-top:30px;
+}
+
+.tags_container:empty {
+    padding-top:0;
+}
+
+.custom_tag {
+    background-color:#F0F0F0;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    float: left;
+    padding:10px;
+}
+
+.custom_tag input, .custom_tag button{
+    background-color:transparent;
+    border:0;
+}
+
+.custom_tag .close {
+    width:11px;
+}

@@ -3,6 +3,7 @@ import WrappedField from "../WrappedField"
 import FieldInfo from "../FieldInfo"
 import Notification from "../Notification"
 import Checkbox from './Checkbox'
+import AutocompleteFetch from "../AutocompleteFetch"
 import Radio from './Radio'
 import $ from 'jquery'
 
@@ -97,14 +98,13 @@ export class RequiredMetadata extends Component {
                 </div>
                 <div className="row">
                     <div className="col-md-12">
-                        <WrappedField
-                            label="Tags"
-                            name="tags"
-                            type="string"
-                            placeholder=""
-                            helptext="Use both technical and non-technical terms to help users find your dataset.  Start typing to add tags."
-                            value={this.props.values.tags}
-                            required="true"
+                    <label className="usa-label">Tags*</label>
+                        <AutocompleteFetch
+                            values={this.props.values}
+                            apiUrl={this.props.apiUrl}
+                            name="groups"
+                            titleField="name"
+                            getOptions={this.props.fetchCollectionsOpts}
                         />
                     </div>
                 </div>
