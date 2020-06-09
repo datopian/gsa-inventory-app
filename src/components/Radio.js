@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Radio = ({label, selected, styleClass,id,name, onChange}) => {
-
-    const handleChange = (event) => {
-        const {checked} = event.target;
-        //onChange(checked);
-    };
+const Radio = ({label, selected, styleClass,id,name, handleRadio}) => {
 
     return (
         <div className={`form-group ${styleClass}`}>
@@ -15,7 +10,7 @@ const Radio = ({label, selected, styleClass,id,name, onChange}) => {
                     className="usa-radio__input" 
                     value={selected}
                     defaultChecked={selected}
-                    onChange={handleChange}
+                    onChange={handleRadio}
                     name={name}
                     id={id}/>
 

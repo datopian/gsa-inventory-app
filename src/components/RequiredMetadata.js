@@ -10,10 +10,16 @@ export class RequiredMetadata extends Component {
     
     constructor(props) {
         super(props)
+
+        this.state = {
+            rights: 'true'
+        }
     }
     
-    handleRadio() {
-
+    handleRightsRadio = (event) => {
+        this.setState({
+            rights: event.target.value
+        })
     }
 
     urlify(text){ 
@@ -35,6 +41,8 @@ export class RequiredMetadata extends Component {
         }
         return (
             <div className="usa-form-custom">
+
+            { this.state.rights }
                 <section id="section-basic-mega-menu" className="site-component-section">
                     <h1 className="usite-page-title" id="basic-mega-menu">Required Metadata</h1>
                     <p className="site-text-intro">This form follows the <a href="#">DCAT-US Schema.</a></p>
@@ -185,17 +193,17 @@ export class RequiredMetadata extends Component {
                         <Radio
                             label='My dataset is public'
                             name="op1"
-                            value="Option 1"
+                            value="true"
                             selected={true}
-                            onChange={this.handleRadio}
+                            handleRadio={this.handleRightsRadio}
                             id="option1"
                         />
                         <Radio
                             label='My dataset is not public'
                             name="op1"
-                            value="Option 2"
+                            value="false"
                             selected={false}
-                            onChange={this.handleRadio}
+                            handleRadio={this.handleRightsRadio}
                             id="option2"
                         />
 
@@ -203,7 +211,7 @@ export class RequiredMetadata extends Component {
                             name="dataset_rights"
                             type="string"
                             helptext="If your dataset is not public, please add an explanation of rights and feel free to include any instructions on restrictions, or how to access a restricted file*"
-                            disabled={true}
+                            disabled={this.state.rights=='true' ? true : ''}
                             required={false}
                         />
                     </div>
@@ -219,7 +227,7 @@ export class RequiredMetadata extends Component {
                             name="op2"
                             value="Option 3"
                             selected={true}
-                            onChange={this.handleRadio}
+                            handleRadio={this.handleRadio}
                             id="option3"
                         />
                         <Radio
@@ -227,7 +235,7 @@ export class RequiredMetadata extends Component {
                             name="op2"
                             value="Option 4"
                             selected={false}
-                            onChange={this.handleRadio}
+                            handleRadio={this.handleRadio}
                             id="option4"
                         />
 
