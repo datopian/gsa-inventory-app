@@ -12,13 +12,27 @@ export class RequiredMetadata extends Component {
         super(props)
 
         this.state = {
-            rights: 'true'
+            rights: 'true',
+            spatial: 'true',
+            temporal: 'true'
         }
     }
     
     handleRightsRadio = (event) => {
         this.setState({
             rights: event.target.value
+        })
+    }
+
+    handleSpatialRadio = (event) => {
+        this.setState({
+            spatial: event.target.value
+        })
+    }
+
+    handleTemporalRadio = (event) => {
+        this.setState({
+            temporal: event.target.value
         })
     }
 
@@ -42,7 +56,6 @@ export class RequiredMetadata extends Component {
         return (
             <div className="usa-form-custom">
 
-            { this.state.rights }
                 <section id="section-basic-mega-menu" className="site-component-section">
                     <h1 className="usite-page-title" id="basic-mega-menu">Required Metadata</h1>
                     <p className="site-text-intro">This form follows the <a href="#">DCAT-US Schema.</a></p>
@@ -190,28 +203,29 @@ export class RequiredMetadata extends Component {
                 <div className="row">
                     <div className="col-md-12">
                     <label className="usa-label">Rights*</label> <br/>
+
                         <Radio
                             label='My dataset is public'
-                            name="op1"
+                            name="rights"
                             value="true"
                             selected={true}
                             handleRadio={this.handleRightsRadio}
-                            id="option1"
+                            id="rights_option_1"
                         />
                         <Radio
                             label='My dataset is not public'
-                            name="op1"
+                            name="rights"
                             value="false"
                             selected={false}
                             handleRadio={this.handleRightsRadio}
-                            id="option2"
+                            id="rights_option_2"
                         />
 
                         <WrappedField
                             name="dataset_rights"
                             type="string"
                             helptext="If your dataset is not public, please add an explanation of rights and feel free to include any instructions on restrictions, or how to access a restricted file*"
-                            disabled={this.state.rights=='true' ? true : ''}
+                            disabled={this.state.rights=='false' ? '' : true}
                             required={false}
                         />
                     </div>
@@ -222,28 +236,29 @@ export class RequiredMetadata extends Component {
                 <div className="row">
                     <div className="col-md-12">
                     <label className="usa-label">Relevant Location*</label> <br/>
+
                         <Radio
                             label='My dataset does not have a spatial component'
-                            name="op2"
-                            value="Option 3"
+                            name="spatial"
+                            value="false"
                             selected={true}
-                            handleRadio={this.handleRadio}
-                            id="option3"
+                            handleRadio={this.handleSpatialRadio}
+                            id="spatial_option_1"
                         />
                         <Radio
                             label='My dataset does have a spatial component'
-                            name="op2"
-                            value="Option 4"
+                            name="spatial"
+                            value="true"
                             selected={false}
-                            handleRadio={this.handleRadio}
-                            id="option4"
+                            handleRadio={this.handleSpatialRadio}
+                            id="spatial_option_2"
                         />
 
                         <WrappedField
                             name="dataset_spatial"
                             type="string"
                             helptext="If your dataset has a spatial component, please provide location such as place name or latitude/longitude pairs*"
-                            disabled={true}
+                            disabled={this.state.spatial=='true' ? true : ''}
                             required={false}
                         />
                     </div>
@@ -254,26 +269,26 @@ export class RequiredMetadata extends Component {
                     <label className="usa-label">Temporal*</label> <br/>
                         <Radio
                             label='My dataset does not have a start and end date for the applicability of data'
-                            name="op3"
-                            value="Option 5"
+                            name="temporal"
+                            value="true"
                             selected={true}
-                            onChange={this.handleRadio}
-                            id="option5"
+                            handleRadio={this.handleTemporalRadio}
+                            id="temporal_option_1"
                         />
                         <Radio
                             label='My dataset does have a start and end date for the applicability of data'
-                            name="op3"
-                            value="Option 6"
+                            name="temporal"
+                            value="false"
                             selected={false}
-                            onChange={this.handleRadio}
-                            id="option6"
+                            handleRadio={this.handleTemporalRadio}
+                            id="temporal_option_2"
                         />
 
                         <WrappedField
                             name="dataset_spatial"
                             type="string"
                             helptext="If your dataset has a temporal component, please provide start date for applicability of data above"
-                            disabled={true}
+                            disabled={this.state.temporal=='true' ? true : ''}
                             required={false}
                         />
 
@@ -281,7 +296,7 @@ export class RequiredMetadata extends Component {
                             name="dataset_spatial"
                             type="string"
                             helptext="If your dataset has a temporal component, please provide end date for applicability of data above"
-                            disabled={true}
+                            disabled={this.state.temporal=='true' ? true : ''}
                             required={false}
                         />
                     </div>
