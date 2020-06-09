@@ -107,13 +107,13 @@ textarea.usa-input {
 .dataset_url {
     color: #71767A;
     display: inline;
-    padding-right:20px;
 }
 
 .dataset_url_edit {
     margin-top:10px;
     font-size: .8rem;
     padding: 8px 15px;
+    margin-left:20px;
 }
 
 
@@ -192,4 +192,19 @@ textarea.usa-input {
 
 .tooltip a {
     cursor: pointer;
+}
+
+.dataset_url_input {
+    margin-left:5px;
+    border-radius: 0;
+    border:1px solid #565c65;
+    
+}
+
+.hidden {
+    display:none;
+}
+
+.dataset_url_edit {
+    margin-top:0;
 }

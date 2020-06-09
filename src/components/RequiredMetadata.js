@@ -4,12 +4,31 @@ import FieldInfo from "../FieldInfo"
 import Notification from "../Notification"
 import Checkbox from './Checkbox'
 import Radio from './Radio'
+import $ from 'jquery'
 
 export class RequiredMetadata extends Component {
+    
+    constructor(props) {
+        super(props)
+    }
     
     handleRadio() {
 
     }
+
+    urlify(text){ 
+        text = text.replace(/\s+/g, '-').toLowerCase();
+        return text
+    }
+
+    editText = false
+    editURL = () => {
+        this.editText  = true
+        $('.dataset_url_input').removeClass('hidden');
+        $('.dataset_url_edit').addClass('hidden');
+        $('.dataset_absolute_url').addClass('hidden');
+    }
+
     render() {
         if (this.props.currentStep != 1) { // Prop: The current step
          return null
@@ -31,13 +50,14 @@ export class RequiredMetadata extends Component {
                             value={this.props.values.title}
                             required="true"
                         />
-
-
+                        
+                        <br />
                         <p className="dataset_url">
-                            URL: URL: vanilla28.ckan.io/dataset/dataset-name
+                            URL: vanilla28.ckan.io/dataset/<span className="dataset_absolute_url">{ this.urlify(this.props.values.title) }</span>
                         </p>
-
-                        <button className="usa-button dataset_url_edit">Edit</button>
+                        
+                        <input type="text" className={`dataset_url_input hidden`} ></input>
+                        <button type="button" className="usa-button dataset_url_edit" onClick={() => this.editURL()}>Edit</button>
                     </div>
                 </div>
                 <div className="row">
@@ -62,7 +82,7 @@ export class RequiredMetadata extends Component {
                             type="string"
                             placeholder=""
                             helptext="Use both technical and non-technical terms to help users find your dataset.  Start typing to add tags."
-                            value={this.props.values.title}
+                            value={this.props.values.tags}
                             required="true"
                         />
                     </div>
