@@ -15,10 +15,25 @@ export class RequiredMetadata extends Component {
         this.state = {
             rights: 'true',
             spatial: 'true',
-            temporal: 'true'
+            temporal: 'true',
+            license_others: 'false'
         }
 
         console.log(this.props.fetchDatasetsOpts)
+    }
+
+    handleLicense = (event) => {
+
+        if(event.target.value == "Others"){
+            this.setState({
+                license_others: "true"
+            })
+        } else {
+            this.setState({
+                license_others: "false"
+            })
+        }
+        
     }
     
     handleRightsRadio = (event) => {
@@ -133,6 +148,7 @@ export class RequiredMetadata extends Component {
                             choices={["Sub Agency 1 ", "Sub Agency 2", "Sub Agency 3", "Sub-Agency 4"]}
                             className="error-msg"
                         />
+                        
                     </div>
                 </div>
                 <div className="row">
@@ -200,7 +216,14 @@ export class RequiredMetadata extends Component {
                             choices={["MIT", "Open Source License","Others"]}
                             className="error-msg"
                             required={true}
-                        />
+                        />  
+                        <WrappedField
+                            name="license_others"
+                            type="string"
+                            helptext="If you selected “Other”, please specify the name of your License*"
+                            disabled={this.state.license_others=='true' ? false : true}
+                            required={false}
+                        />  
                     </div>
                 </div>
                 <div className="row">

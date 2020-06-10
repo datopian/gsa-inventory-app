@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { FieldArray, Field } from "formik"
 import Autocomplete from "react-autocomplete-input"
+import $ from 'jquery'
 
 let tags = []
 let errorClass = "hidden"
@@ -18,24 +19,27 @@ const addEntity = (val, push) => {
 }
 
 const checkTags = () => {
-  if(tags == ""){ 
-    errorClass = ""
+  if(tags.length == 0){ 
+    $('#tags-error').addClass('error-msg')
+    $('#tags-error').removeClass('hidden')
   } else {
-    errorClass = "hiiden"
+    $('#tags-error').removeClass('error-msg')
+    $('#tags-error').addClass('hidden')
   }
+
+  console.log(tags)
 }
 
 const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
   const [opts, setopts] = useState()
   const [tagText, setTagText] = useState("")
 
-
   return (
     <FieldArray
       name={name}
       render={arrayHelpers => (
         <div className="mt-gutter m-4">
-          <div className={`error-msg ${ errorClass }`} type="string" placeholder="" value="">Tags are required</div>
+          <div id="tags-error" className={`error-msg hidden`} type="string" placeholder="" value="">Tags are required</div>
           <Autocomplete
             className="usa-input"
             id="collections-autocomplete"
@@ -46,6 +50,7 @@ const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
             onRequestOptions={e => getOptions(e, values, setopts)}
             options={opts}
             value={tagText}
+            onBlur={checkTags}
             onChange={setTagText}
             onKeyPress={(event) => {
               // little hacky - grab autocomplete input value
@@ -55,6 +60,7 @@ const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
                 addEntity(val, arrayHelpers.push)
                 setopts([])
                 setTagText("")
+                checkTags()
                 event.preventDefault()
               }
             }}
@@ -72,7 +78,7 @@ const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
                   <button
                     className="text-red-600 font-extrabold"
                     type="button"
-                    onClick={() => arrayHelpers.remove(index)}
+                    onClick={() => {arrayHelpers.remove(index); tags.pop(index)}}
                   >
                     <img className="close" src={require("./img/close.svg")} />
                   </button>
