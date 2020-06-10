@@ -108,6 +108,9 @@ const DatasetFrom = ({
     description: "",
     publisher: "",
     subagency: "",
+    accessLevel: "",
+    dataQuality: "",
+    license: "",
     extras: {
       dataLevel: "",
       contactName: "",
@@ -163,8 +166,25 @@ const DatasetFrom = ({
     }
 
     if (!values.publisher) {
-      errors.extras.publisher = "Publisher is required"
+      errors.publisher = "Please select a publisher"
     }
+
+    if (!values.subagency) {
+      errors.subagency = "Please select a subagency"
+    }
+
+    if (!values.accessLevel) {
+      errors.accessLevel = "Please select Public Access Level"
+    }
+
+    if (!values.dataQuality) {
+      errors.dataQuality = "Please select data quality"
+    }
+
+    if (!values.license) {
+      errors.license = "Please select a license"
+    }
+
 
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}
     return errors

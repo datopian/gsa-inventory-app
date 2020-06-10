@@ -118,7 +118,7 @@ export class RequiredMetadata extends Component {
                             type="select"
                             choices={["Publisher 1 ", "Publisher 2", "Publisher 3", "Publisher 4"]}
                             required={true}
-                            className=""
+                            className="error-msg"
                             infoText="The publishing entity (e.g. your agency) and optionally their parent organization(s)."
                         />
                     </div>
@@ -130,7 +130,7 @@ export class RequiredMetadata extends Component {
                             name="subagency"
                             type="select"
                             choices={["Sub Agency 1 ", "Sub Agency 2", "Sub Agency 3", "Sub-Agency 4"]}
-                            className=""
+                            className="error-msg"
                         />
                     </div>
                 </div>
@@ -170,10 +170,10 @@ export class RequiredMetadata extends Component {
                     <div className="col-md-12">
                         <WrappedField
                             label="Public Access level"
-                            name="publicaccesslevel"
+                            name="accessLevel"
                             type="select"
                             choices={["Private", "Public"]}
-                            className=""
+                            className="error-msg"
                             required={true}
                         />
                     </div>
@@ -182,10 +182,10 @@ export class RequiredMetadata extends Component {
                     <div className="col-md-12">
                         <WrappedField
                             label="Meets Agency Data Quality"
-                            name="meets_agency_data_quality"
+                            name="dataQuality"
                             type="select"
                             choices={["Yes", "No"]}
-                            className=""
+                            className="error-msg"
                             required={true}
                         />
                     </div>
@@ -197,7 +197,7 @@ export class RequiredMetadata extends Component {
                             name="license"
                             type="select"
                             choices={["MIT", "Open Source License","Others"]}
-                            className=""
+                            className="error-msg"
                             required={true}
                         />
                     </div>
