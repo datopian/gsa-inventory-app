@@ -210,7 +210,7 @@ const DatasetFrom = ({
             <Form onSubmit={handleSubmit}>
             {status && <Notification {...status} />}
 
-            <RequiredMetadata values={values} currentStep={step}/>
+            <RequiredMetadata values={values} currentStep={step} fetchDatasetsOpts={fetchDatasetsOpts}/>
             <AdditionalMetadata values={values} currentStep={step}/>
             <ResourceMetadata values={values} currentStep={step}/>
             

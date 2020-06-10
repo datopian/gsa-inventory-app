@@ -28,7 +28,7 @@ const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
             trigger=""
             spacer=""
             matchAny={true}
-            
+            onRequestOptions={e => getOptions(e, values, setopts)}
             options={opts}
             onKeyPress={(event) => {
               // little hacky - grab autocomplete input value

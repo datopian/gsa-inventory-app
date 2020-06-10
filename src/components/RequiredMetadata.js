@@ -17,6 +17,8 @@ export class RequiredMetadata extends Component {
             spatial: 'true',
             temporal: 'true'
         }
+
+        console.log(this.props.fetchDatasetsOpts)
     }
     
     handleRightsRadio = (event) => {
@@ -104,7 +106,7 @@ export class RequiredMetadata extends Component {
                             apiUrl={this.props.apiUrl}
                             name="groups"
                             titleField="name"
-                            getOptions={this.props.fetchCollectionsOpts}
+                            getOptions={this.props.fetchDatasetsOpts}
                         />
                     </div>
                 </div>
