@@ -104,8 +104,9 @@ export class RequiredMetadata extends Component {
                         <AutocompleteFetch
                             values={this.props.values}
                             apiUrl={this.props.apiUrl}
-                            name="groups"
+                            name="tags"
                             titleField="name"
+                            required={true}
                             getOptions={this.props.fetchDatasetsOpts}
                         />
                     </div>

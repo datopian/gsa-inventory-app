@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { FieldArray, Field } from "formik"
 import Autocomplete from "react-autocomplete-input"
 
+let tags = []
+let errorClass = "hidden"
 const addEntity = (val, push) => {
   if (val) {
     const dataset = {
@@ -10,6 +12,16 @@ const addEntity = (val, push) => {
     }
 
     push(dataset)
+
+    tags.push(dataset)
+  }
+}
+
+const checkTags = () => {
+  if(tags == ""){ 
+    errorClass = ""
+  } else {
+    errorClass = "hiiden"
   }
 }
 
@@ -21,6 +33,7 @@ const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
       name={name}
       render={arrayHelpers => (
         <div className="mt-gutter m-4">
+          <div className={`error-msg ${ errorClass }`} type="string" placeholder="" value="">Tags are required</div>
           <Autocomplete
             className="usa-input"
             id="collections-autocomplete"

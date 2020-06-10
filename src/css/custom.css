@@ -232,4 +232,5 @@ textarea.usa-input {
 
 .custom_tag .close {
     width:11px;
+    cursor: pointer;
 }
