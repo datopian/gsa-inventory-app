@@ -27,6 +27,8 @@ const checkTags = () => {
 
 const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
   const [opts, setopts] = useState()
+  const [tagText, setTagText] = useState("")
+
 
   return (
     <FieldArray
@@ -43,6 +45,8 @@ const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
             matchAny={true}
             onRequestOptions={e => getOptions(e, values, setopts)}
             options={opts}
+            value={tagText}
+            onChange={setTagText}
             onKeyPress={(event) => {
               // little hacky - grab autocomplete input value
               if(event.key == 'Enter'){
@@ -50,6 +54,7 @@ const AutocompleteForm = ({ values, getOptions, apiUrl, name, titleField }) => {
                 const val = el.value
                 addEntity(val, arrayHelpers.push)
                 setopts([])
+                setTagText("")
                 event.preventDefault()
               }
             }}
