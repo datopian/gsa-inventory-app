@@ -227,7 +227,7 @@ export class RequiredMetadata extends Component {
                             type="string"
                             helptext="If you selected “Other”, please specify the name of your License*"
                             disabled={this.state.license_others=='true' ? false : true}
-                            required={false}
+                            required={true}
                         />  
                     </div>
                 </div>

@@ -111,6 +111,7 @@ const DatasetFrom = ({
     accessLevel: "",
     dataQuality: "",
     license: "",
+    license_others: "",
     datasetTemporal: "",
     rights_desc: "",
     spatial_location: "",
@@ -208,6 +209,10 @@ const DatasetFrom = ({
       errors.temporal_desc = "Field cannot be empty"
     }
 
+    if (!values.license_others) {
+      errors.license_others = "Field cannot be empty"
+    }
+
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}
     return errors
   }
@@ -248,14 +253,12 @@ const DatasetFrom = ({
 
             <Navigation handleSteps={handleSteps} currentStep={step}/>
             
-            
             <Form onSubmit={handleSubmit}>
             {status && <Notification {...status} />}
 
             <RequiredMetadata values={values} currentStep={step} fetchDatasetsOpts={fetchDatasetsOpts}/>
             <AdditionalMetadata values={values} currentStep={step}/>
             <ResourceMetadata values={values} currentStep={step}/>
-            
             
             <div className="row">
               <div className="col-sm-12">
@@ -268,48 +271,7 @@ const DatasetFrom = ({
                 <SubmitButtons currentStep={step}  handleSteps={handleSteps}/>
               </div>
             </div>
-
-            <div
-                className="mt-gutter bg-yellow-300 p-4 m-4 border-dotted border-4"
-                hidden={!debug}
-            >
-                <Field
-                className="mr-4"
-                name="extras.master"
-                type="checkbox"
-                checked={values.extras && values.extras.master}
-                />{" "}
-                <span className="mt-1">Master Collection</span>
-            </div>
-            {values.extras && values.extras.summary_dataset && (
-                <a
-                className="m-4 text-teal-500 hover:text-teal-800 text-sm"
-                href={`/dataset/docs/${values.extras.summary_dataset}`}
-                target="_blank"
-                >
-                Add documentation to Collection
-                </a>
-            )}
             
-            
-            {values.id && (
-                <button
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline m-4"
-                onClick={e => {
-                    e.preventDefault()
-                    deleteCollection(values, resetForm, setStatus)
-                }}
-                type="button"
-                disabled={isSubmitting}
-                >
-                Delete
-                </button>
-            )}
-            {debug && (
-                <Debug
-                vals={{ dirty, values, errors, touched, isSubmitting, status }}
-                />
-            )}
             </Form>
         </div>
       )}
