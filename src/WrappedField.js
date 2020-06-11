@@ -19,7 +19,7 @@ const WrappedField = props => {
     <div>
       <label className="usa-label">
         {label}
-        {required && <span>*</span>}
+        {label && required && <span>*</span>}
 
         {/* Tooltip */}
         {infoText && <div className="tooltip">
@@ -35,7 +35,7 @@ const WrappedField = props => {
       </label>
 
       <p className={`usa-helptext ${ disabledClass }`}>{ helptext }</p>
-      <ErrorMessage className="error-msg" {...rest} component="div" />
+      <ErrorMessage className={`error-msg ${ disabledClass }`} {...rest} component="div" />
       {
         {
           string: (

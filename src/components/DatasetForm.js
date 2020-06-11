@@ -111,6 +111,8 @@ const DatasetFrom = ({
     accessLevel: "",
     dataQuality: "",
     license: "",
+    datasetTemporal: "",
+    rights_desc: "",
     extras: {
       dataLevel: "",
       contactName: "",
@@ -181,7 +183,13 @@ const DatasetFrom = ({
       errors.dataQuality = "Please select data quality"
     }
 
+    if (!values.datasetTemporal) {
+      errors.datasetTemporal = "Please Enter values"
+    }
 
+    if (!values.rights_desc) {
+      errors.rights_desc = "Field cannot be empty"
+    }
 
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}
     return errors

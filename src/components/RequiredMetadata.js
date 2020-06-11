@@ -15,7 +15,7 @@ export class RequiredMetadata extends Component {
         this.state = {
             rights: 'true',
             spatial: 'true',
-            temporal: 'true',
+            temporal: 'false',
             license: '',
             license_others: 'false'
         }
@@ -253,11 +253,12 @@ export class RequiredMetadata extends Component {
                         />
 
                         <WrappedField
-                            name="dataset_rights"
+                            name="rights_desc"
                             type="string"
+                            value={ this.props.values.extras.rights_desc }
                             helptext="If your dataset is not public, please add an explanation of rights and feel free to include any instructions on restrictions, or how to access a restricted file*"
-                            disabled={this.state.rights=='false' ? '' : true}
-                            required={false}
+                            disabled={this.state.rights=='true' ? true : ''}
+                            required={this.state.rights=='true' ? '' : true}
                         />
                     </div>
 
@@ -301,7 +302,7 @@ export class RequiredMetadata extends Component {
                         <Radio
                             label='My dataset does not have a start and end date for the applicability of data'
                             name="temporal"
-                            value="true"
+                            value="false"
                             selected={true}
                             handleRadio={this.handleTemporalRadio}
                             id="temporal_option_1"
@@ -309,26 +310,28 @@ export class RequiredMetadata extends Component {
                         <Radio
                             label='My dataset does have a start and end date for the applicability of data'
                             name="temporal"
-                            value="false"
+                            value="true"
                             selected={false}
                             handleRadio={this.handleTemporalRadio}
                             id="temporal_option_2"
                         />
 
                         <WrappedField
-                            name="dataset_spatial"
+                            name="dataset_temporal_1"
                             type="string"
                             helptext="If your dataset has a temporal component, please provide start date for applicability of data above"
-                            disabled={this.state.temporal=='true' ? true : ''}
-                            required={false}
+                            disabled={this.state.temporal=='true' ? '' : true}
+                            required={true}
                         />
 
                         <WrappedField
-                            name="dataset_spatial"
+                            name="datasetTemporal"
                             type="string"
-                            helptext="If your dataset has a temporal component, please provide end date for applicability of data above"
+                            placeholder=""
+                            helptext="Use everyday language to make the dataset easy to find and understand."
                             disabled={this.state.temporal=='true' ? true : ''}
-                            required={false}
+                            required={this.state.temporal=='true' ? true : ''}
+                            value={this.props.values.datasetTemporal}
                         />
                     </div>
                 </div>
