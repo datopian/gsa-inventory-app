@@ -107,6 +107,7 @@ textarea.usa-input {
 .dataset_url {
     color: #71767A;
     display: inline;
+    font-size:.9rem;
 }
 
 .dataset_url_edit {

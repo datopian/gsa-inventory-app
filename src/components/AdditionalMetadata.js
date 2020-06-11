@@ -23,9 +23,9 @@ export class AdditionalMetadata extends Component {
                             name="themes"
                             type="string"
                             placeholder=""
+                            infoText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta justo eu ante placerat aliquam. "
                             helptext="[Some copy describing themes, distinguishing them from tags] Start typing to add themes."
                             value={this.props.values.themes}
-                            required="true"
                         />
                     </div>
                 </div>
@@ -37,8 +37,8 @@ export class AdditionalMetadata extends Component {
                             type="string"
                             placeholder=""
                             helptext=""
+                            infoText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta justo eu ante placerat aliquam. "
                             value={this.props.values.data_dict_url}
-                            required="true"
                         />
                     </div>
                 </div>
@@ -49,7 +49,6 @@ export class AdditionalMetadata extends Component {
                             name="data_dictionary_type"
                             type="select"
                             choices={["Data 1 ", "Data 2", "Data 3", "Data 4"]}
-                            required={true}
                             className=""
                         />
                     </div>
