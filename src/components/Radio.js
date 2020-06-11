@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Radio = ({label, selected, styleClass,id,name, handleRadio}) => {
+const Radio = ({label, selected,value, styleClass,id,name, handleRadio}) => {
 
     return (
         <div className={`form-group ${styleClass}`}>
             <input
                     type="radio"
                     className="usa-radio__input" 
-                    value={selected}
+                    value={value}
                     defaultChecked={selected}
                     onChange={handleRadio}
                     name={name}

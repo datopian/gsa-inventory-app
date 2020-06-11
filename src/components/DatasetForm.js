@@ -113,6 +113,9 @@ const DatasetFrom = ({
     license: "",
     datasetTemporal: "",
     rights_desc: "",
+    spatial_location: "",
+    temporal_start_date: "",
+    temporal_desc: "",
     extras: {
       dataLevel: "",
       contactName: "",
@@ -189,6 +192,18 @@ const DatasetFrom = ({
 
     if (!values.rights_desc) {
       errors.rights_desc = "Field cannot be empty"
+    }
+
+    if (!values.spatial_location) {
+      errors.spatial_location = "Field cannot be empty"
+    }
+
+    if (!values.temporal_start_date) {
+      errors.temporal_start_date = "Field cannot be empty"
+    }
+
+    if (!values.temporal_desc) {
+      errors.temporal_desc = "Field cannot be empty"
     }
 
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}

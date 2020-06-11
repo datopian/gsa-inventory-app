@@ -14,7 +14,7 @@ export class RequiredMetadata extends Component {
 
         this.state = {
             rights: 'true',
-            spatial: 'true',
+            spatial: 'false',
             temporal: 'false',
             license: '',
             license_others: 'false'
@@ -287,12 +287,14 @@ export class RequiredMetadata extends Component {
                         />
 
                         <WrappedField
-                            name="dataset_spatial"
+                            name="spatial_location"
                             type="string"
+                            value={ this.props.values.extras.rights_desc }
                             helptext="If your dataset has a spatial component, please provide location such as place name or latitude/longitude pairs*"
-                            disabled={this.state.spatial=='true' ? true : ''}
-                            required={false}
+                            disabled={this.state.spatial=='true' ? '' : true}
+                            required={this.state.spatial=='true' ? '' : true}
                         />
+                        
                     </div>
                 </div>
 
@@ -317,21 +319,20 @@ export class RequiredMetadata extends Component {
                         />
 
                         <WrappedField
-                            name="dataset_temporal_1"
+                            name="temporal_start_date"
                             type="string"
                             helptext="If your dataset has a temporal component, please provide start date for applicability of data above"
                             disabled={this.state.temporal=='true' ? '' : true}
-                            required={true}
+                            required={this.state.temporal=='true' ? '' : true}
                         />
 
                         <WrappedField
-                            name="datasetTemporal"
+                            name="temporal_desc"
                             type="string"
                             placeholder=""
                             helptext="Use everyday language to make the dataset easy to find and understand."
-                            disabled={this.state.temporal=='true' ? true : ''}
-                            required={this.state.temporal=='true' ? true : ''}
-                            value={this.props.values.datasetTemporal}
+                            disabled={this.state.temporal=='true' ? '' : true}
+                            required={this.state.temporal=='true' ? '' : true}
                         />
                     </div>
                 </div>
