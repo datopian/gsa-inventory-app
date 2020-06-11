@@ -126,7 +126,7 @@ const DatasetFrom = ({
   }
 
   const validate = values => {
-    let errors = { extras: {} }
+    const errors = {};
 
     if (!values.title || values.title.length < 3) {
       errors.title = "Title is required"
