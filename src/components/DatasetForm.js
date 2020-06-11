@@ -181,9 +181,6 @@ const DatasetFrom = ({
       errors.dataQuality = "Please select data quality"
     }
 
-    if (!values.license) {
-      errors.license = "Please select a license"
-    }
 
 
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}

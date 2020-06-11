@@ -16,14 +16,16 @@ export class RequiredMetadata extends Component {
             rights: 'true',
             spatial: 'true',
             temporal: 'true',
+            license: '',
             license_others: 'false'
         }
 
-        console.log(this.props.fetchDatasetsOpts)
     }
 
     handleLicense = (event) => {
-
+        this.setState({
+            license: event.target.value
+        })
         if(event.target.value == "Others"){
             this.setState({
                 license_others: "true"
@@ -215,8 +217,11 @@ export class RequiredMetadata extends Component {
                             type="select"
                             choices={["MIT", "Open Source License","Others"]}
                             className="error-msg"
+                            value={this.license}
+                            onChange={this.handleLicense}
                             required={true}
                         />  
+
                         <WrappedField
                             name="license_others"
                             type="string"
