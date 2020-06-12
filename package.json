@@ -31,10 +31,11 @@
   "scripts": {
     "css": "postcss src/css/index.css -o src/App.css",
     "start": "yarn css && react-scripts start",
-    "build": "yarn css && react-scripts build",
-    "build:bundle": "yarn build && webpack --config webpack.config.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "npm run build:react && npm run build:bundle",
+    "build:react": "react-scripts build",
+    "build:bundle": "webpack --config webpack.config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
