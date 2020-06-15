@@ -320,17 +320,16 @@ export class RequiredMetadata extends Component {
 
                         <WrappedField
                             name="temporal_start_date"
-                            type="string"
+                            type="date"
                             helptext="If your dataset has a temporal component, please provide start date for applicability of data above"
                             disabled={this.state.temporal=='true' ? '' : true}
                             required={this.state.temporal=='true' ? '' : true}
                         />
 
                         <WrappedField
-                            name="temporal_desc"
-                            type="string"
-                            placeholder=""
-                            helptext="Use everyday language to make the dataset easy to find and understand."
+                            name="temporal_end_desc"
+                            type="date"
+                            helptext="If your dataset has a temporal component, please provide end date for applicability of data above"
                             disabled={this.state.temporal=='true' ? '' : true}
                             required={this.state.temporal=='true' ? '' : true}
                         />

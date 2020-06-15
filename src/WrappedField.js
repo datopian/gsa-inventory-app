@@ -62,6 +62,11 @@ const WrappedField = props => {
                   {label}
               </label>
             </div>
+          ),
+          date: (
+            <div>
+              <input type="date" {...rest} className={`usa-input ${ disabledClass }`} disabled={disabled}></input>
+            </div>
           )
         }[type]
       }
