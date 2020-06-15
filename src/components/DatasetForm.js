@@ -205,63 +205,97 @@ const DatasetFrom = ({
 
 
   return (
-    <Formik
-      initialValues={Object.assign({}, defaultValues, collection)}
-      onSubmit={(values, actions) => {
-        console.log("SUBMIT", values)
-        handleSteps(2)
-        /*
-        // if this is an existing record, update
-        if (values.id) {
-          updateCollection(values, actions)
-          // otherwise create
-        } else {
-          createCollection(values, actions)
-        }*/
-      }}
-      validate={validate}
-      render={({
-        values,
-        errors,
-        actions,
-        touched,
-        status,
-        resetForm,
-        handleSubmit,
-        setValues,
-        setStatus,
-        isSubmitting,
-        isValid,
-        dirty
-      }) => (
-        <div className="container">
-
-            <Navigation handleSteps={handleSteps} currentStep={step}/>
+    <div class="container">
+      <Navigation handleSteps={handleSteps} currentStep={step}/>
             
-            <Form onSubmit={handleSubmit}>
-            {status && <Notification {...status} />}
+      <Formik
+        initialValues={Object.assign({}, defaultValues, collection)}
+        onSubmit={(values, actions) => {
+          console.log("SUBMIT", values)
+          handleSteps(2)
+          /*
+          // if this is an existing record, update
+          if (values.id) {
+            updateCollection(values, actions)
+            // otherwise create
+          } else {
+            createCollection(values, actions)
+          }*/
+        }}
+        validate={validate}
+        render={({
+          values,
+          errors,
+          actions,
+          touched,
+          status,
+          resetForm,
+          handleSubmit,
+          setValues,
+          setStatus,
+          isSubmitting,
+          isValid,
+          dirty
+        }) => (
+          <div className="">
 
-            <RequiredMetadata values={values} currentStep={step} fetchDatasetsOpts={fetchDatasetsOpts} isValid={isValid}/>
-            <AdditionalMetadata values={values} currentStep={step}/>
-            <ResourceMetadata values={values} currentStep={step}/>
-            
+              <Form onSubmit={handleSubmit}>
+                {status && <Notification {...status} />}
 
-            <div className="row">
-              <div className="col-sm-12">
-                <br/><br/>
-              </div>
-              <div className="col-sm-4">
-                <BackButton currentStep={step} handleSteps={handleSteps}/>
-              </div>
-              <div className="col-sm-8 text-right">
-                <SubmitButtons currentStep={step}  handleSteps={handleSteps}/>
-              </div>
-            </div>
-            
-            </Form>
-        </div>
-      )}
-    />
+                <RequiredMetadata values={values} currentStep={step} fetchDatasetsOpts={fetchDatasetsOpts} isValid={isValid}/>
+                
+              </Form>
+          </div>
+        )}
+      />
+
+
+      <Formik
+        initialValues={Object.assign({}, defaultValues, collection)}
+        onSubmit={(values, actions) => {
+          console.log("SUBMIT", values)
+          handleSteps(2)
+        }}
+        validate={validate}
+        render={({
+          values,
+          errors,
+          actions,
+          touched,
+          status,
+          resetForm,
+          handleSubmit,
+          setValues,
+          setStatus,
+          isSubmitting,
+          isValid,
+          dirty
+        }) => (
+          <div className="">
+              
+              <Form onSubmit={handleSubmit}>
+                {status && <Notification {...status} />}
+
+                <AdditionalMetadata values={values} currentStep={step}/>
+                <ResourceMetadata values={values} currentStep={step}/>
+                
+                <div className="row">
+                  <div className="col-sm-12">
+                    <br/><br/>
+                  </div>
+                  <div className="col-sm-4">
+                    <BackButton currentStep={step} handleSteps={handleSteps}/>
+                  </div>
+                  <div className="col-sm-8 text-right">
+                    <SubmitButtons currentStep={step}  handleSteps={handleSteps}/>
+                  </div>
+                </div>
+
+              </Form>
+          </div>
+        )}
+      />
+    </div>
   )
 }
 
