@@ -335,6 +335,14 @@ export class RequiredMetadata extends Component {
                         />
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-sm-12 text-right">
+                        <br/><br/>
+                        <button className="usa-button usa-button--outline">Save as draft</button>
+                        <button className="usa-button" type="submit" disabled={!this.props.isValid}>Save and Continue</button>
+                    </div>
+                </div>
             </div>
         )
     }

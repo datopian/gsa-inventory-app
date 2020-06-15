@@ -2,14 +2,7 @@ import React, { Component } from 'react'
 
 export class SubmitButtons extends Component {
     render(props) {
-        if(this.props.currentStep == 1){
-            return (
-                <div>
-                    <button className="usa-button usa-button--outline">Save as draft</button>
-                    <button className="usa-button" type="submit" onClick={() => this.props.handleSteps(2)}>Save and Continue</button>
-                </div>
-            )
-        } else if(this.props.currentStep == 2){
+        if(this.props.currentStep == 2){
             return (
                 <div>
                     <button className="usa-button usa-button--outline">Save as draft</button>

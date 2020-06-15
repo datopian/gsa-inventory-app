@@ -209,13 +209,15 @@ const DatasetFrom = ({
       initialValues={Object.assign({}, defaultValues, collection)}
       onSubmit={(values, actions) => {
         console.log("SUBMIT", values)
+        handleSteps(2)
+        /*
         // if this is an existing record, update
         if (values.id) {
           updateCollection(values, actions)
           // otherwise create
         } else {
           createCollection(values, actions)
-        }
+        }*/
       }}
       validate={validate}
       render={({
@@ -229,6 +231,7 @@ const DatasetFrom = ({
         setValues,
         setStatus,
         isSubmitting,
+        isValid,
         dirty
       }) => (
         <div className="container">
@@ -238,10 +241,11 @@ const DatasetFrom = ({
             <Form onSubmit={handleSubmit}>
             {status && <Notification {...status} />}
 
-            <RequiredMetadata values={values} currentStep={step} fetchDatasetsOpts={fetchDatasetsOpts}/>
+            <RequiredMetadata values={values} currentStep={step} fetchDatasetsOpts={fetchDatasetsOpts} isValid={isValid}/>
             <AdditionalMetadata values={values} currentStep={step}/>
             <ResourceMetadata values={values} currentStep={step}/>
             
+
             <div className="row">
               <div className="col-sm-12">
                 <br/><br/>
