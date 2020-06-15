@@ -117,60 +117,50 @@ const DatasetFrom = ({
     spatial_location: "",
     temporal_start_date: "",
     temporal_end_desc: "",
-    extras: {
-      dataLevel: "",
-      contactName: "",
-      contactEmail: "",
-      uniqueID: "",
-      rights: ""
-    }
+    dataLevel: "",
+    contactName: "",
+    contactEmail: "",
+    uniqueID: "",
+    rights: ""
   }
 
   const validate = values => {
-    //const errors = {};
-    let errors = { extras: {} }
+    const errors = {};
+    //let errors = { extras: {} }
 
 
     if (!values.title || values.title.length < 3) {
       errors.title = "Title is required"
     }
 
-    if (!values.extras.contactName) {
-      errors.extras.contactName = "Contact Name is required"
+    if (!values.contactName) {
+      errors.contactName = "Contact Name is required"
     }
 
-    if (!values.extras.uniqueID) {
-      errors.extras.uniqueID = "Unique ID is required"
+    if (!values.uniqueID) {
+      errors.uniqueID = "Unique ID is required"
     }
 
-    if (!values.extras.contactEmail) {
-      errors.extras.contactEmail = "Contact Email is required"
+    if (!values.contactEmail) {
+      errors.contactEmail = "Contact Email is required"
     }
 
     if (!values.description) {
       errors.description = "Description field is required"
     }
-
+    
     if (
-      values.extras.contactEmail &&
+      values.contactEmail &&
       !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-        values.extras.contactEmail
+        values.contactEmail
       )
     ) {
-      errors.extras.contactEmail = "Please enter a valid email address"
+      errors.contactEmail = "Please enter a valid email address"
     }
 
-    if (
-      values.homePageUrl &&
-      !/^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(
-        values.homePageUrl
-      )
-    ) {
-      errors.homePageUrl = "Please enter a valid URL"
-    }
-
-    if (!values.extras.dataLevel) {
-      errors.extras.dataLevel = "Data Level is required"
+    /*
+    if (!values.dataLevel) {
+      errors.dataLevel = "Data Level is required"
     }
 
     if (!values.publisher) {
@@ -201,6 +191,11 @@ const DatasetFrom = ({
       errors.spatial_location = "Field cannot be empty"
     }
 
+    if (!values.license_others) {
+      errors.license_others = "Field cannot be empty"
+    }
+
+    
     if (!values.temporal_start_date) {
       errors.temporal_start_date = "Field cannot be empty"
     }
@@ -208,14 +203,8 @@ const DatasetFrom = ({
     if (!values.temporal_end_date) {
       errors.temporal_end_date = "Field cannot be empty"
     }
-
-    if (!values.temporal_desc) {
-      errors.temporal_desc = "Field cannot be empty"
-    }
-
-    if (!values.license_others) {
-      errors.license_others = "Field cannot be empty"
-    }
+     */
+    
 
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}
     return errors

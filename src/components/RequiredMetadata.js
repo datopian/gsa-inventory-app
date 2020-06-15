@@ -157,7 +157,7 @@ export class RequiredMetadata extends Component {
                     <div className="col-md-12">
                         <WrappedField
                             label="Contact Name"
-                            name="extras.contactName"
+                            name="contactName"
                             type="string"
                             required={true}
                             infoText="Lorem ipsum set dolor immit as this i a dummy text for tooltip"
@@ -168,7 +168,7 @@ export class RequiredMetadata extends Component {
                     <div className="col-md-12">
                         <WrappedField
                             label="Contact Email"
-                            name="extras.contactEmail"
+                            name="contactEmail"
                             type="string"
                             required={true}
                         />
@@ -178,7 +178,7 @@ export class RequiredMetadata extends Component {
                     <div className="col-md-12">
                         <WrappedField
                             label="Unique ID"
-                            name="extras.uniqueID"
+                            name="uniqueID"
                             type="string"
                             required={true}
                             infoText="Lorem ipsum set dolor immit as this i a dummy text for tooltip"
@@ -255,7 +255,7 @@ export class RequiredMetadata extends Component {
                         <WrappedField
                             name="rights_desc"
                             type="string"
-                            value={ this.props.values.extras.rights_desc }
+                            value={ this.props.values.rights_desc }
                             helptext="If your dataset is not public, please add an explanation of rights and feel free to include any instructions on restrictions, or how to access a restricted file*"
                             disabled={this.state.rights=='true' ? true : ''}
                             required={this.state.rights=='true' ? '' : true}
@@ -289,7 +289,7 @@ export class RequiredMetadata extends Component {
                         <WrappedField
                             name="spatial_location"
                             type="string"
-                            value={ this.props.values.extras.rights_desc }
+                            value={ this.props.values.spatial_location }
                             helptext="If your dataset has a spatial component, please provide location such as place name or latitude/longitude pairs*"
                             disabled={this.state.spatial=='true' ? '' : true}
                             required={this.state.spatial=='true' ? '' : true}
