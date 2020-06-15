@@ -28,6 +28,7 @@ const DatasetFrom = ({
 
   //State hooks for Steps
   let [step, setStep] = useState('1');
+  let [formCount, setFormCount] = useState('0');
   
   const handleSteps = nextstep => {
     setStep(nextstep);
@@ -206,13 +207,14 @@ const DatasetFrom = ({
 
   return (
     <div class="container">
-      <Navigation handleSteps={handleSteps} currentStep={step}/>
-            
+      <Navigation handleSteps={handleSteps} currentStep={step} formCount={formCount}/>
+      
       <Formik
         initialValues={Object.assign({}, defaultValues, collection)}
         onSubmit={(values, actions) => {
           console.log("SUBMIT", values)
           handleSteps(2)
+          setFormCount(1)
           /*
           // if this is an existing record, update
           if (values.id) {
