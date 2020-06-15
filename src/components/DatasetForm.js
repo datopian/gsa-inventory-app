@@ -112,12 +112,10 @@ const DatasetFrom = ({
     dataQuality: "",
     license: "",
     license_others: "",
-    datasetTemporal: "",
     rights_desc: "",
     spatial_location: "",
     temporal_start_date: "",
     temporal_end_desc: "",
-    dataLevel: "",
     contactName: "",
     contactEmail: "",
     uniqueID: "",
@@ -158,11 +156,6 @@ const DatasetFrom = ({
       errors.contactEmail = "Please enter a valid email address"
     }
 
-    /*
-    if (!values.dataLevel) {
-      errors.dataLevel = "Data Level is required"
-    }
-
     if (!values.publisher) {
       errors.publisher = "Please select a publisher"
     }
@@ -179,14 +172,10 @@ const DatasetFrom = ({
       errors.dataQuality = "Please select data quality"
     }
 
-    if (!values.datasetTemporal) {
-      errors.datasetTemporal = "Please Enter values"
-    }
-
     if (!values.rights_desc) {
       errors.rights_desc = "Field cannot be empty"
     }
-
+    
     if (!values.spatial_location) {
       errors.spatial_location = "Field cannot be empty"
     }
@@ -195,7 +184,7 @@ const DatasetFrom = ({
       errors.license_others = "Field cannot be empty"
     }
 
-    
+    /*
     if (!values.temporal_start_date) {
       errors.temporal_start_date = "Field cannot be empty"
     }
@@ -203,7 +192,7 @@ const DatasetFrom = ({
     if (!values.temporal_end_date) {
       errors.temporal_end_date = "Field cannot be empty"
     }
-     */
+    */
     
 
     if (JSON.stringify(errors) === JSON.stringify({ extras: {} })) return {}
