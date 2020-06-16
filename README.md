@@ -1,4 +1,6 @@
-# dep-of-ed-admin-ui
+# GSA inventory app read me
+
+This is just copied from the readme of the previous work... So take with a big pinch of salt 
 
 ## Quick Start
 To sample the application run:
