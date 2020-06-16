@@ -1,4 +1,4 @@
-# GSA inventory app read me
+# GSA inventory app spike
 
 This is just copied from the readme of the previous work... So take with a big pinch of salt 
 
