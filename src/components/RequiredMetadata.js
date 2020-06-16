@@ -340,7 +340,7 @@ export class RequiredMetadata extends Component {
                     <div class="col-sm-12 text-right">
                         <br/><br/>
                         <button className="usa-button usa-button--outline">Save as draft</button>
-                        <button className="usa-button" type="submit" disabled={!this.props.isValid}>Save and Continue</button>
+                        <button className="usa-button" type="submit">Save and Continue</button>
                     </div>
                 </div>
             </div>
